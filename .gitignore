@@ -36,3 +36,6 @@
 
 # Scaffold leftovers
 sanity-new.json
+
+.vercel
+.env*
