@@ -1,0 +1,66 @@
+import { defineField, defineType } from 'sanity';
+
+export const profile = defineType({
+  name: 'profile',
+  title: 'Profile',
+  type: 'document',
+  fields: [
+    defineField({ name: 'name', title: 'Name', type: 'string', validation: (rule) => rule.required() }),
+    defineField({ name: 'role', title: 'Role', type: 'string', validation: (rule) => rule.required() }),
+    defineField({ name: 'eyebrow', title: 'Eyebrow', type: 'string', validation: (rule) => rule.required() }),
+    defineField({
+      name: 'statement',
+      title: 'Statement',
+      type: 'text',
+      rows: 3,
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'summary',
+      title: 'Summary',
+      type: 'text',
+      rows: 10,
+      description: 'Separate paragraphs with a blank line.',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({ name: 'email', title: 'Email', type: 'string', validation: (rule) => rule.required().email() }),
+    defineField({ name: 'phone', title: 'Phone', type: 'string', validation: (rule) => rule.required() }),
+    defineField({ name: 'githubUrl', title: 'GitHub URL', type: 'url', validation: (rule) => rule.required() }),
+    defineField({ name: 'linkedinUrl', title: 'LinkedIn URL', type: 'url' }),
+    defineField({
+      name: 'photo',
+      title: 'Profile photo',
+      type: 'image',
+      description: 'Square photo works best. Leave empty to use the photo bundled with the site.',
+      options: { hotspot: true },
+    }),
+    defineField({
+      name: 'strengths',
+      title: 'Key strengths',
+      type: 'array',
+      of: [{ type: 'string' }],
+      validation: (rule) => rule.min(1),
+    }),
+    defineField({ name: 'location', title: 'Location', type: 'string', validation: (rule) => rule.required() }),
+    defineField({ name: 'company', title: 'Company', type: 'string', validation: (rule) => rule.required() }),
+    defineField({ name: 'tenure', title: 'Tenure', type: 'string', validation: (rule) => rule.required() }),
+    defineField({
+      name: 'educationDegree',
+      title: 'Degree',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'educationSchool',
+      title: 'School',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'educationYear',
+      title: 'Graduation year',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+  ],
+});
