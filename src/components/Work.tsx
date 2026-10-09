@@ -26,11 +26,6 @@ export const Work = ({ projects }: WorkProps): ReactElement | null => {
               <p className="case__role">{project.role}</p>
             </header>
             <p className="case__summary">{project.summary}</p>
-            {project.siteUrl ? (
-              <a className="case__link" href={project.siteUrl} rel="noreferrer" target="_blank">
-                {project.siteUrl.replace(/^https?:\/\/(www\.)?/, '')}
-              </a>
-            ) : null}
             <ul className="tags">
               {project.environment.map((tool) => (
                 <li key={tool}>{tool}</li>

@@ -217,8 +217,6 @@ const readProject = (value: unknown): Project | null => {
     return null;
   }
 
-  const siteUrl = readString(value.siteUrl, '');
-
   return {
     id: readString(value.id, title),
     title,
@@ -226,7 +224,6 @@ const readProject = (value: unknown): Project | null => {
     role: readString(value.role, ''),
     summary: readString(value.summary, ''),
     engine: readString(value.engine, 'CI/CD'),
-    ...(siteUrl.length > 0 ? { siteUrl } : {}),
     environment,
     responsibilities,
     pipeline,

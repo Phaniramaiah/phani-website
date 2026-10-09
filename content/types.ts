@@ -110,7 +110,6 @@ export type Project = {
   role: string;
   summary: string;
   engine: string;
-  siteUrl?: string;
   environment: readonly string[];
   responsibilities: readonly string[];
   pipeline: readonly PipelineStage[];

@@ -1407,15 +1407,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .case__summary { max-width: 68ch; }
 
-.case__link {
-  display: inline-block;
-  margin-top: 10px;
-  color: var(--ember);
-  font-family: var(--mono);
-  font-size: 13px;
-  letter-spacing: 0.04em;
-}
-
 .tags { margin: 22px 0 8px; }
 
 .duties {

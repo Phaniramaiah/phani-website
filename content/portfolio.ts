@@ -440,7 +440,6 @@ export const portfolioContent = {
       summary:
         'Your AI buddy for personalized support. Happy Teacher is a private well-being app for people who work with young children. I host the Happi chatbot on EC2 and ground its answers with retrieval.',
       engine: 'RAG on EC2',
-      siteUrl: 'https://thehappyteacher.org',
       environment: [
         'RAG',
         'Pinecone',

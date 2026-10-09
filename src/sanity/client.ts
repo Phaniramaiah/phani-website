@@ -38,7 +38,7 @@ export const portfolioQuery = `{
     "id": _id, company, role, location, start, end, current, summary, highlights, order
   },
   "projects": *[_type == "project"] | order(order asc) {
-    "id": _id, title, client, role, summary, engine, siteUrl, environment, responsibilities, order,
+    "id": _id, title, client, role, summary, engine, environment, responsibilities, order,
     pipeline[]{ "id": _key, label, detail }
   }
 }`;
