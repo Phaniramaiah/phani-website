@@ -2,16 +2,17 @@ import type { ReactElement } from 'react';
 import type { PipelineStage } from '../../content/types';
 
 type PipelineProps = {
+  engine: string;
   stages: readonly PipelineStage[];
 };
 
-export const Pipeline = ({ stages }: PipelineProps): ReactElement | null => {
+export const Pipeline = ({ engine, stages }: PipelineProps): ReactElement | null => {
   if (stages.length === 0) {
     return null;
   }
 
   return (
-    <aside className="pipeline" aria-label="Delivery path orchestrated with AWS CodePipeline">
+    <aside className="pipeline" aria-label={`Delivery path orchestrated with ${engine}`}>
       <div className="pipeline__bar">
         <span className="pipeline__dots" aria-hidden="true">
           <i />
@@ -19,7 +20,7 @@ export const Pipeline = ({ stages }: PipelineProps): ReactElement | null => {
           <i />
         </span>
         <p>delivery-path</p>
-        <span className="pipeline__engine">AWS CodePipeline</span>
+        <span className="pipeline__engine">{engine}</span>
       </div>
       <ol className="pipeline__steps">
         {stages.map((stage, index) => (

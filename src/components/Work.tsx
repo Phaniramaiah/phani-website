@@ -14,7 +14,7 @@ export const Work = ({ projects }: WorkProps): ReactElement | null => {
 
   return (
     <section className="section" id="work">
-      <SectionHeading index="06" kicker="Selected work" title="One platform, end to end." />
+      <SectionHeading index="06" kicker="Selected work" title="Platforms in production." />
       <div className="work">
         {projects.map((project) => (
           <article key={project.id} className="case">
@@ -26,6 +26,11 @@ export const Work = ({ projects }: WorkProps): ReactElement | null => {
               <p className="case__role">{project.role}</p>
             </header>
             <p className="case__summary">{project.summary}</p>
+            {project.siteUrl ? (
+              <a className="case__link" href={project.siteUrl} rel="noreferrer" target="_blank">
+                {project.siteUrl.replace(/^https?:\/\/(www\.)?/, '')}
+              </a>
+            ) : null}
             <ul className="tags">
               {project.environment.map((tool) => (
                 <li key={tool}>{tool}</li>
@@ -37,7 +42,7 @@ export const Work = ({ projects }: WorkProps): ReactElement | null => {
                   <li key={item}>{item}</li>
                 ))}
               </ol>
-              <Pipeline stages={project.pipeline} />
+              <Pipeline engine={project.engine} stages={project.pipeline} />
             </div>
           </article>
         ))}

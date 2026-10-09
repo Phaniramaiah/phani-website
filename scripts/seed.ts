@@ -99,6 +99,8 @@ const projectDocument = (item: Project): SanityDocument => ({
   client: item.client,
   role: item.role,
   summary: item.summary,
+  engine: item.engine,
+  ...(item.siteUrl ? { siteUrl: item.siteUrl } : {}),
   environment: [...item.environment],
   responsibilities: [...item.responsibilities],
   pipeline: pipelineDocuments(item.pipeline),

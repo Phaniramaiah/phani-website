@@ -19,7 +19,7 @@ const practices: readonly { title: string; copy: string }[] = [
   },
   {
     title: 'Deliver',
-    copy: 'CodePipeline, CodeBuild, and CodeDeploy, with Bitbucket and SonarQube before anything is released.',
+    copy: 'GitHub Actions, CodePipeline from Bitbucket, and Jenkins, depending on the platform.',
   },
   {
     title: 'Protect',
