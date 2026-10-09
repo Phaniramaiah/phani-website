@@ -1,6 +1,7 @@
 import type { ReactElement } from 'react';
 import type { Certification, Profile } from '../../content/types';
 import { certificationStatus } from '../utils/certification';
+import { InfinityLoop } from './InfinityLoop';
 import { Portrait } from './Portrait';
 import { socialLinksOf } from './SocialLinks';
 import { Typewriter } from './Typewriter';
@@ -36,9 +37,7 @@ export const Hero = ({ profile, certifications, animate }: HeroProps): ReactElem
         <span />
         <span />
       </div>
-      <p className="hero__watermark" aria-hidden="true">
-        OPS
-      </p>
+      <InfinityLoop animate={animate} />
       <div className="hero__layout">
         <div className="hero__copy">
           <p className="eyebrow">
@@ -79,12 +78,14 @@ export const Hero = ({ profile, certifications, animate }: HeroProps): ReactElem
             </div>
           </dl>
         </div>
-        <Portrait
-          badges={activeCertifications.map((certification) => shortCertName(certification.name))}
-          name={profile.name}
-          photoUrl={profile.photoUrl}
-          role={`${profile.role} · ${profile.company.replace(/ Pvt Ltd$/, '')}`}
-        />
+        <div className="hero__visual">
+          <Portrait
+            badges={activeCertifications.map((certification) => shortCertName(certification.name))}
+            name={profile.name}
+            photoUrl={profile.photoUrl}
+            role={`${profile.role} · ${profile.company.replace(/ Pvt Ltd$/, '')}`}
+          />
+        </div>
       </div>
     </section>
   );

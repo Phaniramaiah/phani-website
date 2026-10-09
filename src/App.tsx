@@ -11,6 +11,7 @@ import { Experience } from './components/Experience';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { BrandStrip } from './components/BrandStrip';
 import { Marquee } from './components/Marquee';
 import { Skills } from './components/Skills';
 import { Stats } from './components/Stats';
@@ -38,6 +39,7 @@ export const App = (): ReactElement => {
         <Hero animate={animate} certifications={content.certifications} profile={content.profile} />
         <Stats animate={animate} stats={content.stats} />
         <Marquee labels={labels} />
+        <BrandStrip />
         <About profile={content.profile} />
         <Skills groups={content.skillGroups} strengths={content.profile.strengths} />
         <Certifications certifications={content.certifications} />
